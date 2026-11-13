@@ -355,25 +355,6 @@ button, input, select { font: inherit; color: inherit; }
 .split__copy { max-width: 540px; }
 .split--media-left .split__copy { justify-self: end; }
 
-/* Foto provisória (seção 02) — trocar pela foto de pessoas definida com a Opimed */
-.photo-ph {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 10px;
-  aspect-ratio: 1.08;
-  padding: 32px;
-  border-radius: var(--radius);
-  border: 1.5px dashed #cfc5bb;
-  background:
-    radial-gradient(70% 60% at 30% 25%, rgba(var(--brand-glow), .28), transparent 70%),
-    linear-gradient(160deg, var(--brand-soft), var(--brand-tint));
-  text-align: center;
-  color: var(--t2);
-}
-.photo-ph svg { width: 44px; height: 44px; color: var(--brand-accent-ink); margin-bottom: 6px; }
-.photo-ph span { max-width: 300px; font-size: 18px; font-weight: 600; line-height: 1.35; color: var(--t1); }
-.photo-ph small { font-size: 15px; color: var(--t3); }
 
 /* Tecnologia e simplicidade (seção 03) */
 .tech__head {
@@ -697,6 +678,9 @@ button, input, select { font: inherit; color: inherit; }
   box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .7);
 }
 .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+/* Seção 02: foto de pessoas convivendo (vertical, em fundo claro) */
+.photo--people { aspect-ratio: 4 / 5; box-shadow: 0 40px 70px -44px rgba(40, 28, 16, .45); }
+.photo--people img { object-position: 50% 55%; }
 .photo::after {
   content: "";
   position: absolute;
@@ -1089,7 +1073,8 @@ button, input, select { font: inherit; color: inherit; }
   .cta-group .btn, .wa-card .btn, .campaign .btn { width: 100%; }
   .btn--lg { font-size: 17px; padding: 17px 22px; }
 
-  .photo-ph { aspect-ratio: 1.15; }
+  .photo--people { aspect-ratio: 1; }
+  .photo--people img { object-position: 50% 52%; }
 
   .flags { padding: 26px 14px; }
   .flags__cities { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 6px; width: 100%; }
