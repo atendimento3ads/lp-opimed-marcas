@@ -93,6 +93,22 @@
   var form = document.getElementById('leadForm');
   if (!form) return;
 
+  /* Modelo de interesse: o botão de cada modelo (data-model) já seleciona o modelo no formulário,
+     e o campo "modelo" segue junto com o lead */
+  var modelSelect = form.querySelector('#modelo');
+  if (modelSelect) {
+    var markModel = function () {
+      modelSelect.classList.toggle('is-filled', modelSelect.selectedIndex > 0);
+    };
+    document.querySelectorAll('[data-model]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        modelSelect.value = btn.getAttribute('data-model');
+        markModel();
+      });
+    });
+    modelSelect.addEventListener('change', markModel);
+  }
+
   var phone = form.querySelector('[data-phone]');
   if (phone) {
     phone.addEventListener('input', function () {
